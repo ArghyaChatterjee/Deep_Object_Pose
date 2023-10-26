@@ -1,38 +1,15 @@
-[![License CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
-![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)
-# Deep Object Pose Estimation - ROS Inference
 
-This is the official DOPE ROS package for detection and 6-DoF pose estimation of **known objects** from an RGB camera.  The network has been trained on the following YCB objects:  cracker box, sugar box, tomato soup can, mustard bottle, potted meat can, and gelatin box.  For more details, see our [CoRL 2018 paper](https://arxiv.org/abs/1809.10790) and [video](https://youtu.be/yVGViBqWtBI).
-
-*Note:*  The instructions below refer to inference only.  Training code is also provided but not supported. Thank you to [@Blaine141](https://github.com/blaine141) You can check out how to train DOPE on a single [GPU and using NVISII](https://github.com/NVlabs/Deep_Object_Pose/issues/155#issuecomment-791148200).
-
-![DOPE Objects](dope_objects.png)
+## Training
+The updated training and inference (without ROS) scripts [here](https://github.com/NVlabs/Deep_Object_Pose/tree/master/scripts/train2). You can check out how to train DOPE on a single [GPU and using NVISII](https://github.com/NVlabs/Deep_Object_Pose/issues/155#issuecomment-791148200).
 
 ## Evaluation:
 
 A script with a simple example for computing the ADD and ADD-S metric on data. Please refer to [script/metrics/](https://github.com/NVlabs/Deep_Object_Pose/tree/master/scripts/metrics). 
 
-## Training:
-A NViSII script to generate synthetic data for training DOPE. See this [readme](https://github.com/NVlabs/Deep_Object_Pose/tree/master/scripts/nvisii_data_gen) for more details. We also added the update training and inference (without ROS) scripts for the NViSII paper [here](https://github.com/NVlabs/Deep_Object_Pose/tree/master/scripts/train2). 
-
-<!-- 2020/02/09 - Upgraded DOPE to use Python 3. Updated Dockerfile to use Python3-compatible ROS Noetic. The Python 2.7/ROS Kinetic is still available on the ['ros-kinetic' branch](https://github.com/NVlabs/Deep_Object_Pose/tree/ros-kinetic). -->
-
-<!-- 2020/16/03 - Added a wiki (thanks to [@saratrajput](https://github.com/saratrajput))  -->
-
-<!-- 2019/03/07 - ROS interface update (thanks to Martin Günther) -->
-
-<!-- 2019/11/06 - Added bleach YCB weights  -->
+## Generate Dataset:
+A NViSII script to generate synthetic data for training DOPE. See this [readme](https://github.com/NVlabs/Deep_Object_Pose/tree/master/scripts/nvisii_data_gen) 
 
 ## Installing
-
-We have tested on Ubuntu 20.04 with ROS Noetic with an NVIDIA Titan X and RTX 2080ti with Python 3.8. The code may work on other systems.
-
----
-***NOTE***
-
-For hardware-accelerated ROS2 inference support, please visit [Isaac ROS DOPE](https://github.com/NVIDIA-ISAAC-ROS/isaac_ros_pose_estimation/tree/main/isaac_ros_dope) which has been tested with ROS2 Foxy on Jetson AGX Xavier/JetPack 4.6 and on x86/Ubuntu 20.04 with RTX3060i.
-
----
 
 The following steps describe the native installation. Alternatively, use the provided [Docker image](docker/readme.md) and skip to Step #7.
 
